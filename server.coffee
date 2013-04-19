@@ -9,13 +9,6 @@ socketio = require 'socket.io'
 app = express()
 server = http.createServer app
 io = socketio.listen server
-io.set 'transports', [
-  'jsonp-polling'
-  'xhr-polling'
-  'websocket'
-  'flashsocket'
-  'htmlfile'
-]
 
 class Logic
   constructor: ->
