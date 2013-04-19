@@ -47,10 +47,8 @@ express.response.js = (file) ->
 app.use express.static __dirname + '/public'
 
 mainJs = coffee.compile fs.readFileSync(__dirname + '/main.coffee', 'utf-8')
-main2Js = coffee.compile fs.readFileSync(__dirname + '/main2.coffee', 'utf-8')
 
 app.get '/main.js', (req, res) -> res.js mainJs
-app.get '/main2.js', (req, res) -> res.js main2Js
 
 io.sockets.on 'connection', (socket) ->
   logic.join socket
