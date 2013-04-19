@@ -1,0 +1,18 @@
+{
+  "name": "ffhs-swe-chat",
+  "version": "0.0.1",
+  "private": true,
+  "homepage": "http://rabe.io/",
+  "author": "FFHS SWE Group Eusebio Petrovic Rabe",
+  "contributors": [
+    "Antonio Eusebio",
+    "Slavisa Petrovic",
+    "Felix Rabe"
+  ],
+  "dependencies": {
+    "coffee-script": "*",
+    "express": "*",
+    "socket.io": "*"
+  },
+  "main": "server.coffee"
+}
