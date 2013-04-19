@@ -24,7 +24,7 @@ class Logic
     socket.emit 'msg', msg for msg in @messages
     socket.on 'msg', (msg) =>
       @emitToAll msg
-    socket.on 'disconnect', ->
+    socket.on 'disconnect', =>
       @connections.splice @connections.indexOf(socket), 1
 
   emitToAll: (msg) ->
