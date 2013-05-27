@@ -46,4 +46,6 @@ app.get '/main.js', (req, res) -> res.js mainJs
 io.sockets.on 'connection', (socket) ->
   logic.join socket
 
-server.listen 3000
+port = 80
+server.listen port
+console.log "Server listening on #{port}"
