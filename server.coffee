@@ -10,14 +10,18 @@ app = express()
 server = http.createServer app
 io = socketio.listen server
 
+# Array::remove = (thing) ->
+#   @splice @indexOf(thing), 1
+
 class Logic
   constructor: ->
     @connections = []
-    @messages = [
-      'first'
-      'second'
-      'third'
-    ]
+    @messages = []
+    # @messages = [
+    #   'first'
+    #   'second'
+    #   'third'
+    # ]
 
   join: (socket) ->
     @connections.push socket
@@ -25,6 +29,7 @@ class Logic
     socket.on 'msg', (msg) =>
       @emitToAll msg
     socket.on 'disconnect', =>
+      # @connections.remove socket
       @connections.splice @connections.indexOf(socket), 1
 
   emitToAll: (msg) ->
